@@ -1,3 +1,3 @@
 # MicrobiomeFramework
 
-code will be uploaded shortly.
+plot generation code & data will be uploaded shortly.
