@@ -20,8 +20,7 @@ class MicrobiomeHostCoEvolutionSimulator:
         self.save_only_population_sums = save_only_population_sums
         self.results_output_path = os.path.join(results_parent_dir,
                                                 get_transmission_name(PARENT_TRANSMISSION, PEERS_TRANSMISSION, ENV_TRANSMISSION),
-                                                MICROBIOME_CLASS, f'{HOSTS_NUM}_hosts',
-                                                get_results_path(SELECTION_TYPE, FITNESS_DECAY, RELEVANT_STEP_BACTERIA_NUM))
+                                                MICROBIOME_CLASS, get_results_path(SELECTION_TYPE, FITNESS_DECAY, RELEVANT_STEP_BACTERIA_NUM))
         if IS_PRE_GENERATED_TEMPLATE:
             with gzip.GzipFile(os.path.join('mb_structures', f'{MICROBIOME_CLASS.lower()}_mbs.npy.gz'), "r") as f:
                 self.microbiome_structure_pool = np.load(f)
@@ -243,7 +242,7 @@ class MicrobiomeHostCoEvolutionSimulator:
 
 
 def main():
-    results_parent_dir = 'results_test'
+    results_parent_dir = 'results'
     num_of_repeats = 100
 
     validate_params()
